@@ -19,7 +19,7 @@ function validate(input) {
     }
     if (!input.released) {
         errors.released = "Complete date"
-    } else if (!/^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/.test(input.released)) { //eslint-disable-line
+    } else if (!/^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/.test(input.released)) { 
         errors.released = "Format error (dd//mm/yy)"
     } else {
         errors.released = ""
@@ -59,7 +59,7 @@ export default function AddVideoGame() {
 
 
 
-    //----------Inputs---------
+    //Inputs
     function handleInputChange(e) {
         setErrors(validate({
             ...input,
@@ -70,7 +70,7 @@ export default function AddVideoGame() {
             [e.target.name]: e.target.value
         })
     }
-    //-----Select genres----
+    //Select genres
     function handleGenreSelect(e) {
         setInput({
             ...input,
@@ -81,7 +81,7 @@ export default function AddVideoGame() {
             [e.target.genres]: e.target.value
         }))
     }
-    //-----Select platfroms----
+    //Select platfroms
     function handlePlatformsSelect(e) {
         setInput({
             ...input,
@@ -93,7 +93,7 @@ export default function AddVideoGame() {
         }))
     }
 
-    //---------Send form--------
+    //Send form
     function handleSubmit(e) {
         if (input.name === "") {
             e.preventDefault()
@@ -110,7 +110,7 @@ export default function AddVideoGame() {
                 rating: "",
                 image: "",
                 genres: [],
-                platforms: [] //eslint-disable-line
+                platforms: [] 
             })
             navegate('/home')
         }

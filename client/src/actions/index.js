@@ -1,15 +1,21 @@
 import axios from "axios";
 
 
-export function getVideoGames() {
-  return async function (dispatch) {
-    const result = await axios.get('http://localhost:3001/videogames');
-    return dispatch({
-      type: 'GET_VIDEOGAMES',
-      payload: result.data
-    })
-  }
-};
+// export function getVideoGames() {
+//   return async function (dispatch) {
+//     const result = await axios.get('http://localhost:3001/videogames');
+//     return dispatch({
+//       type: 'GET_VIDEOGAMES',
+//       payload: result.data
+//     })
+//   }
+// };
+
+export const getVideoGames = () => dispatch => {
+  return fetch('http://localhost:3001/videogames')
+      .then((response) => response.json())
+      .then((json) => dispatch({ type: 'GET_VIDEOGAMES', payload: json }));
+}
 
 export function getNameVideoGames(name) {
   return async function (dispatch) {
