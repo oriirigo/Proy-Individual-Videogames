@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
     rating:{
       type:DataTypes.DECIMAL,
     },
-    background_image:{
+    image:{
       type:DataTypes.TEXT,
     },
     createdDb:{

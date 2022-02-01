@@ -166,7 +166,7 @@ router.get('/platforms/lists/parents', async (req, res) => {
  
  
 router.post('/videogame',async(req,res)=>{
-  const{name, description, released, rating, image,genres,platforms, createInDb} = req.body;
+  const{name, description, released, rating, image,genres,platforms, createdDb} = req.body;
  
   if (name && description && genres && platforms){
   let videogameCreate=await Videogame.create({
@@ -175,7 +175,7 @@ router.post('/videogame',async(req,res)=>{
     released,
     rating,
     image,
-    createInDb
+    createdDb
   })
  
   let genreDb=await Genres.findAll({
