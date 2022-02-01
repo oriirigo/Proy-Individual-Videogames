@@ -5,7 +5,6 @@ const {Genres, Videogame, Platforms}=require('../db');
 const API_KEY='ca270b38f3904e17bf2cc64bc7f8da4b'
  
 const getApi = async(req) =>{
-  // llamado a las apis para obtener 100 juegos
  
   let infoApi1 = await axios.get(`http://api.rawg.io/api/games?key=${API_KEY}&page_size=40`);
   let infoApi2 = await axios.get(`http://api.rawg.io/api/games?key=${API_KEY}&page=4&page_size=40`);
@@ -13,7 +12,6 @@ const getApi = async(req) =>{
   let games=[];
  
  
-  //mapeo para que games contenga 40 juegos por default de la API
   infoApi1.data.results.map(element=>{
       games.push({
           id: element.id,
@@ -79,14 +77,14 @@ const getApi = async(req) =>{
         }),
       })
   })
-  // deberian ser 100 juegos en games.length;
+
   return games;
 };
  
  
 
  
-const getDb = async function () {  //TRAE INFO DE BD
+const getDb = async function () {  
   const dataBd = await Videogame.findAll({
       include: [
           {
@@ -112,9 +110,9 @@ const getDb = async function () {  //TRAE INFO DE BD
  
  
 const getVideoGames = async() =>{
-  let gamesApi = await getApi(); //gamesApi = [{}{}{}{}{}{}{}]
-  let gamesDb = await getDb(); //x gamesDB=[{}{}{}{}{}{}]
-  let allGames = gamesApi.concat(gamesDb) // juegos de la api : ID : 3000 // juegos de la DB = id 34029345-erer23rq4314-134134-1341324-
+  let gamesApi = await getApi(); 
+  let gamesDb = await getDb(); 
+  let allGames = gamesApi.concat(gamesDb) 
   return allGames;
 };
  
@@ -188,9 +186,9 @@ router.post('/videogame',async(req,res)=>{
  
   await videogameCreate.addPlatforms(platDb);
   await videogameCreate.addGenres(genreDb);
-  res.status(200).send('¡Videojuego creado!')
+  res.status(200).send('Videogame created!')
 }else{
-  return res.status(404).send("Completar formulario correctamente")
+  return res.status(404).send("Complete form correctly")
 }
 })
  
@@ -202,7 +200,7 @@ router.get('/videogame/:id',async(req,res)=>{
     let videogameId= await allVideogames.filter(el => el.id == id);
     videogameId.length?
     res.status(200).send(videogameId):
-    res.status(404).send('Error: no se encontró el videojuego')  }
+    res.status(404).send('Error: game not found')  }
 })
  
  
