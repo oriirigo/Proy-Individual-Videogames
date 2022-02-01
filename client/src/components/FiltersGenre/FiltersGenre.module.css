@@ -1,0 +1,23 @@
+
+.cajaGenre{
+    border:1px solid rgb(233, 219, 227);
+    height:50px;
+    overflow: hidden;
+    width: 400px;
+    position:relative;
+    cursor: pointer;
+}
+.selectGenre{
+    background: black;
+    border: none;
+    font-size: 13px;
+    height: 50px;
+    padding: 5px;
+    width: 400px;
+    color: rgb(251, 248, 248);
+}
+
+.flexDistance{
+    display: flex;
+    flex-direction: row;
+}

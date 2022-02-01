@@ -9,14 +9,14 @@ import FiltersSource from "../FiltersSource/FiltersSource";
 import Orderby from "../OrderBy/OrderBy";
 import Paginated from "../Paginated/Paginated";
 import SearchBar from "../SearchBar/SearchBar";
-import { Fragment } from "react";
+import Styles from "./HomePage.module.css";
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const allVideoGames = useSelector((state) => state.videogames);
 
   useEffect(() => {
-    dispatch(getVideoGames())
+    dispatch(getVideoGames());
   }, [dispatch]);
 
   const [currentePage, setCurrentePage] = useState(1);
@@ -36,19 +36,19 @@ export default function HomePage() {
 
   return (
     <>
-      <div>
+      <div className={Styles.mainDiv}>
         <div>
-          <h1>Videogames Henry</h1>
+          <h1 className={Styles.h1}>Videogames Henry</h1>
         </div>
         <div>
           <Link to="/videogame">
-            <button>Crea un nuevo videojuego</button>
-          </Link> 
+            <button className={Styles.button}>Create a new Videogame</button>
+          </Link>
         </div>
         <div>
-          <button onClick={handleShowAll}>Cargar todos los videojuegos</button>
+          <button className ={Styles.button2} onClick={handleShowAll}>Load all videogames</button>
         </div>
-         <div>
+        <div>
           <FiltersGenre />
         </div>
         <div>
@@ -56,7 +56,7 @@ export default function HomePage() {
         </div>
         <div>
           <Orderby />
-        </div> 
+        </div>
         <div>
           <Paginated
             videogamesperPage={videogamesperPage}
@@ -68,21 +68,19 @@ export default function HomePage() {
           <SearchBar />
         </div>
         <div>
-          <div>
+          <div className={Styles.divCard}>
             {currentCards &&
               currentCards.map((games) => {
                 return (
-                  <Fragment  key={games.id} >
-                      <VideoGameCard
-                        name={games.name}
-                        image={games.image}
-                        genres={games.genres?.map((e) => e.name)}
-                        rating={games.rating}
-                        id={games.id}
-                        createdDb={games.createdDb}
-                      
-                      />
-                   </Fragment> 
+                  <VideoGameCard
+                    name={games.name}
+                    image={games.image}
+                    genres={games.genres?.map((e) => e.name)}
+                    rating={games.rating}
+                    id={games.id}
+                    createdDb={games.createdDb}
+                    key={games.id}
+                  />
                 );
               })}
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from './Paginated.module.css'
  
 export default function Paginated({videogamesperPage, allVideoGames, actualPage}){
     const pageNumber=[];
@@ -9,16 +10,16 @@ export default function Paginated({videogamesperPage, allVideoGames, actualPage}
     }
  
     return(
-        <nav>
-            <ul>
+        <div>
+            <div className={Styles.paginado}>
                 {pageNumber &&
                     pageNumber.map(num=>(
-                        <li key={num}>        
-                            <a key={num} onClick={()=>actualPage(num)}>{num}</a>  
-                            </li>          
+                               
+                            <div key={num} className={Styles.number} onClick={()=>actualPage(num)}>{num}</div>  
+                                     
                     ))}
-            </ul>
-        </nav>
+            </div>
+        </div>
     )
  
 }

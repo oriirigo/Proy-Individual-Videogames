@@ -1,0 +1,49 @@
+.mainDiv{
+    
+    background-image: url('../../Images/home3.jpg');
+    min-height: 100vh;
+    background-size:100% 100%;
+    
+}
+
+.divCard{
+    display: grid;
+    grid-gap: 1rem 3.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
+    margin-right: 20px;
+}
+
+
+.h1{
+    font-family: serif;
+    font-size: 50px;
+    color: rgb(20, 18, 18);
+    text-decoration: none;
+}
+
+
+.button {
+    margin-top: 20px;
+	background-color:rgb(209, 37, 129);
+	border-radius:2px;
+	border:1px solid rgb(209, 37, 129);
+	cursor:pointer;
+	color:#ffffff;
+	font-family:serif;
+	font-size:20px;
+	padding:10px 30px;
+    letter-spacing: 1px;
+}
+
+.button2{
+    margin-top: 20px;
+	background-color:rgb(209, 37, 129);
+	border-radius:2px;
+	border:1px solid rgb(209, 37, 129);
+	cursor:pointer;
+	color:#ffffff;
+	font-family:serif;
+	font-size:20px;
+	padding:10px 30px;
+    letter-spacing: 1px;
+}

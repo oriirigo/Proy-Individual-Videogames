@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+.mainDiv{
+    
+    background-image: url('../../Images/backprinc.jpeg');
+    min-height: 100vh;
+    background-size:100% 100%;
+    
+}
+
+.secondDiv{
+   
+   min-height: 100vh;
+   max-height: 100vh;
+   display: flex;
+   flex-direction: column;
+  
+}
+
+.h1{
+    text-align: center;
+    margin-left: 4%;
+    color: rgb(255, 243, 250);
+    text-decoration: underline deeppink;
+}
+
+.span{
+    text-align: start;
+    font-size: 25px;
+    color: whitesmoke;
+    margin: 20px; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+.btn{
+    transform: rotate(-10deg);
+    margin-top: 70px;
+    margin-right: 200px;
+	background-color:deeppink;
+    border-color: rgb(255, 251, 253);
+    width: 350px;
+    font-size: 30px;
+	cursor:pointer;
+	color:rgb(255, 255, 255);
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+	padding:5px;
+    letter-spacing: 2px;
+}
+
+.btn:hover{
+    background-color: whitesmoke;
+    color: deeppink;
+}

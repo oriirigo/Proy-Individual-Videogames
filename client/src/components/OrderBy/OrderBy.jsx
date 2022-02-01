@@ -1,6 +1,7 @@
 import React from "react";
 import { orderBy } from "../../actions";
 import { useDispatch } from "react-redux";
+import Styles from './OrderBy.module.css'
 
 export default function Orderby() {
     const dispatch = useDispatch();
@@ -18,10 +19,11 @@ export default function Orderby() {
     };
 
     return (
-        <div>
-            <h5 >Order by:</h5>
+    
+        <div className={Styles.flexDistance}>
+            <div className={Styles.cajaOrder}>
             <form>
-                <select  name="Order" onChange={handleOrder} >
+                <select  className={Styles.selectOrder} name="Order" onChange={handleOrder} >
                     <option value="Ascendant">Ascendant</option>
                     <option value="Descendant">Descendant</option>
                     <option value="A-Z">Alphabetically A-Z</option>
@@ -30,6 +32,7 @@ export default function Orderby() {
                     <option value="Lower">Lower Rating</option>
                 </select>
             </form>
+        </div>
         </div>
     )
 };

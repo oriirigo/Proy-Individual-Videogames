@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { postVideogame, getGenres, getPlatforms } from "../../actions";
+import Styles from './AddVideoGame.module.css'
 
 
 function validate(input) {
@@ -127,12 +128,13 @@ export default function AddVideoGame() {
 
     return (
         <>
-        <div >
-            <h1 >CREATE GAME</h1>
-            <form  onSubmit={(e) => handleSubmit(e)}>
+        <div className={Styles.background}>
+            <h1 className={Styles.h1}>CREATE YOUR VIDEOGAME</h1>
+            <form  className={Styles.form} onSubmit={(e) => handleSubmit(e)}>
                 <div>
-                    <label >Name</label>
+                    <label className={Styles.label} >Name</label>
                     <input
+                        className={Styles.inputs}
                         type="text"
                         value={input.name}
                         name="name"
@@ -146,9 +148,9 @@ export default function AddVideoGame() {
                 </div>
 
                 <div>
-                    <label >Rating</label>
+                    <label className={Styles.label}>Rating</label>
                     <input
-                  
+                  className={Styles.inputs}
                         type="number"
                         name="rating"
                         value={input.rating}
@@ -162,9 +164,9 @@ export default function AddVideoGame() {
                 </div>
 
                 <div>
-                    <label >Release Date</label>
+                    <label className={Styles.label} >Release Date</label>
                     <input
-                        
+                        className={Styles.inputs}
                         type="text"
                         value={input.released}
                         name="released"
@@ -178,9 +180,9 @@ export default function AddVideoGame() {
                 </div>
 
                 <div >
-                    <label  >Image:</label>
+                    <label className={Styles.label} >Image:</label>
                     <input
-                     
+                    className={Styles.inputImage}
                         type="url"
                         name="image"
                         value={input.image}
@@ -189,7 +191,7 @@ export default function AddVideoGame() {
                 </div>
 
                 <div>
-                    <label  >Description</label>
+                    <label className={Styles.label} >Description</label>
                     <textarea
                         type="text"
                         value={input.inputDescription}
@@ -204,16 +206,16 @@ export default function AddVideoGame() {
                     }
                 </div>
 
-                <div  >
-                    <label >Platforms</label>
-                    <select  onChange={(e) => handlePlatformsSelect(e)}>
+                <div  className={Styles.platforms}>
+                    <label className={Styles.labelPlatforms}>Platforms</label>
+                    <select  className = {Styles.platGenreSelect} onChange={(e) => handlePlatformsSelect(e)}>
                         {
                             platforms?.map((e) => (
                                 <option value={e.name} key={e.name}> {e.name} </option>
                             ))
                         }
                     </select>
-                    <ul><li>{input.platforms?.map(el=>el +'/')}</li></ul> 
+                    <ul><li className={Styles.li}>{input.platforms?.map(el=>el +'/')}</li></ul> 
                     {
                         errors.platforms && (
                             <p  > {errors.platforms} </p>
@@ -221,16 +223,17 @@ export default function AddVideoGame() {
                     }
                 </div >
 
-                <div >
-                    <label  >Genres</label>
-                    <select onChange={(e) => handleGenreSelect(e)}>
+                <div className={Styles.genres} >
+                    <label  className={Styles.labelGenre}>Genres</label>
+                    <select className = {Styles.platGenreSelect}   onChange={(e) => handleGenreSelect(e)}>
                         {
                             genres?.map((e) => (
                                 <option value={e.name} key={e.name}> {e.name} </option>
                             ))
                         }
                     </select>
-                     <ul><li>{input.genres?.map(el=>el +'/')}</li></ul> 
+                     <ul><li className={Styles.li}>{input.genres?.map(el=>el +'/')}</li></ul> 
+                     
                     {
                         errors.genres && (
                             <p > {errors.genres} </p>
@@ -243,13 +246,13 @@ export default function AddVideoGame() {
                         :
                         <button
                             type="submit"
-                        
+                            className={Styles.button}
                         >ADD VIDEOGAME
                         </button>
                 }
             </form>
              <Link to="/home">
-                <button>Home</button>
+                <button  className={Styles.buttonVolver} >Home</button>
             </Link> 
         </div>
         </>

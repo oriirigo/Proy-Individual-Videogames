@@ -1,0 +1,43 @@
+.cnt {
+    margin: 15px 2px 30px 30px ;
+    background-color:rgb(46, 41, 80,0.8);
+    box-shadow: 4px 2px 10px 1px deeppink;
+    padding: 10px;
+}
+
+.h1{
+    font-family: serif;
+    font-size: 30px;
+    color: rgb(20, 18, 18);
+    text-decoration: none;
+}
+
+.p{
+    color: rgb(19, 16, 16);
+    font-family: serif;
+    font-size:25px ;
+}
+
+.cnt:hover{
+    background:rgb(209, 37, 129)
+  }
+
+
+  .h1btn{
+    display: flex;
+    flex-direction:column-reverse;
+  }
+
+  .div{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+
+  .pgame{
+    color: rgb(20, 18, 18);
+    margin-top: 3px;
+    margin-left: 5px;
+    font-family: serif;
+    font-size: 20px;
+  }
