@@ -5,20 +5,15 @@ const app = require('../../src/app.js');
 const { Videogame, conn } = require('../../src/db.js');
 
 const agent = session(app);
-const videogame = {
-  name: 'Super Mario Bros',
-};
 
-describe('Videogame routes', () => {
-  before(() => conn.authenticate()
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  }));
-  beforeEach(() => Videogame.sync({ force: true })
-    .then(() => Videogame.create(videogame)));
+describe('Test Routes', () => {
   describe('GET /videogames', () => {
-    it('should get 200', () =>
-      agent.get('/videogames').expect(200)
-    );
+    it('responds with and object with videogames', () => {
+        agent.get('/videogames')
+        .then((res) => {
+          expect(res.body).to.be.an('array');
+        })
+    });
   });
-});
+  
+})

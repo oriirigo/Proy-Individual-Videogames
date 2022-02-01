@@ -14,8 +14,12 @@ describe('Videogame model', () => {
           .then(() => done(new Error('It requires a valid name')))
           .catch(() => done());
       });
-      it('should work when its a valid name', () => {
-        Recipe.create({ name: 'Super Mario Bros' });
+      describe('genre', () => {
+        it('should error if genre is null',(done) => {
+         Videogame.create({})
+        .then(() => done(new Error('It requires a valid genre')))
+        .catch(() => done());
+        })
       });
     });
   });

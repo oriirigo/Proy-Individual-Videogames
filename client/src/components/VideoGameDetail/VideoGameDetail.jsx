@@ -32,7 +32,7 @@ export default function VideoGameDetail() {
               height="300px"
             />
             {details[0].description ? (
-              <p classNmae={Styles.description}>{description}</p>
+              <p className={Styles.description}>{description}</p>
             ) : (
               <p className={Styles.description}>No description</p>
             )}

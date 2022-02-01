@@ -21,7 +21,7 @@ export default function SearchBar() {
   return (
     <>
       <div className={Styles.search}>
-        <div clasName={Styles.divSearch}>
+        <div className={Styles.divSearch}>
           <input
            className={Styles.input}
             type="text"

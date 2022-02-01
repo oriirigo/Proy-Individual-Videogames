@@ -12,7 +12,7 @@ return(
             <h1 className={Styles.h1}>{name}</h1>
             </Link  >
             <p className={Styles.p} >{genres?.map(e => e + "/")}</p>
-            <div classNmae={Styles.div}>  
+            <div >  
             <img src={image} alt='Imagen not found' width="350" height="200"  />
             <p className={Styles.pgame} >{rating}</p>
             </div>
