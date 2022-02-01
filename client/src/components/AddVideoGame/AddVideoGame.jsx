@@ -97,11 +97,11 @@ export default function AddVideoGame() {
     function handleSubmit(e) {
         if (input.name === "") {
             e.preventDefault()
-            alert("Completar correctamente el formulario")
+            alert("Complete form correctly")
         } else {
             e.preventDefault();
             dispatch(postVideogame(input))
-            alert("Videojuego Creado!!")
+            alert("Videogame created!")
             setInput({
                 name: "",
                 description: "",
