@@ -1,9 +1,10 @@
 .mainDiv{
     
-    background-image: url('../../Images/home3.jpg');
-    min-height: 100vh;
+    background-image: url('../../Images/casa.png');
+     min-height: 100vh; 
     background-size:100% 100%;
-    
+    font-size: 0;
+	margin-top: -40px 
 }
 
 .divCard{
@@ -11,22 +12,24 @@
     grid-gap: 1rem 3.5rem;
     grid-template-columns: repeat(auto-fit, minmax(27rem,1fr));
     margin-right: 20px;
+
 }
 
 
 .h1{
     font-family: serif;
-    font-size: 50px;
+   font-size: 70px;
     color: rgb(20, 18, 18);
-    text-decoration: none;
+    text-decoration: underline;
+	margin-top: 30px;
 }
 
 
 .button {
     margin-top: 20px;
-	background-color:rgb(209, 37, 129);
+	background-color:rgba(105, 72, 90, 0.507);
 	border-radius:2px;
-	border:1px solid rgb(209, 37, 129);
+	border:1px solid rgb(73, 46, 61);
 	cursor:pointer;
 	color:#ffffff;
 	font-family:serif;
@@ -37,9 +40,9 @@
 
 .button2{
     margin-top: 20px;
-	background-color:rgb(209, 37, 129);
+	background-color:rgba(90, 43, 68, 0.431);
 	border-radius:2px;
-	border:1px solid rgb(209, 37, 129);
+	border:1px solid rgb(63, 47, 55);
 	cursor:pointer;
 	color:#ffffff;
 	font-family:serif;
@@ -47,3 +50,26 @@
 	padding:10px 30px;
     letter-spacing: 1px;
 }
+
+.loading{
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid rgba(37, 17, 28, 0.459); 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-left: 46.5%;
+    margin-top: 150px;
+    overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background-image: url('../../Images/casa.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow:auto
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

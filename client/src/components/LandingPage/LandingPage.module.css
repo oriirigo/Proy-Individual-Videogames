@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 .mainDiv{
     
-    background-image: url('../../Images/backprinc.jpeg');
+    background-image: url('../../Images/castillos.jpg');
     min-height: 100vh;
     background-size:100% 100%;
     
@@ -18,13 +18,19 @@
 
 .h1{
     text-align: center;
-    margin-left: 4%;
+    background-color:rgba(0, 0, 0, 0.431);
+    margin-left: 6%;
     color: rgb(255, 243, 250);
-    text-decoration: underline deeppink;
+    text-decoration: underline rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: 100px;
+    font-weight: 400;
+    animation: cambiar 7s infinite;
 }
 
 .span{
     text-align: start;
+    background-color: rgba(240, 248, 255, 0.356);
     font-size: 25px;
     color: whitesmoke;
     margin: 20px; 
@@ -33,21 +39,37 @@
 
 
 .btn{
-    transform: rotate(-10deg);
+    transform: rotate(0deg);
     margin-top: 70px;
-    margin-right: 200px;
-	background-color:deeppink;
-    border-color: rgb(255, 251, 253);
+    margin-right: 30px;
+	background-color:rgba(255, 245, 250, 0.746);
+    border-color: rgb(3, 3, 3);
+    border-radius: 10px;
     width: 350px;
     font-size: 30px;
 	cursor:pointer;
-	color:rgb(255, 255, 255);
+	color:rgb(12, 12, 12);
 	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 	padding:5px;
     letter-spacing: 2px;
 }
 
 .btn:hover{
-    background-color: whitesmoke;
-    color: deeppink;
+    background-color: rgba(0, 0, 0, 0.37);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 12px rgba(0,0, 0,.5);
+    transform: scale(115%);
+}
+
+
+
+@keyframes cambiar {
+  from{
+      transform: translate(0px,35px);
+      opacity: 0;
+  }
+  100%{ opacity: 2;
+      
+  }
+ 
 }

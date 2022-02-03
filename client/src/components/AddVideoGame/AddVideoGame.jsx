@@ -15,7 +15,7 @@ function validate(input) {
         errors.description = "Complete description"
     }
     if (!input.rating || input.rating > 5 || input.rating < 0) {
-        errors.rating = "Rating valid 0 - 5"
+        errors.rating = "Valid rating 0 - 5"
     }
     if (!input.released) {
         errors.released = "Complete date"
@@ -142,7 +142,7 @@ export default function AddVideoGame() {
                     />
                     {
                         errors.name && (
-                            <p> {errors.name} </p>
+                            <p className={Styles.danger}> {errors.name} </p>
                         )
                     }
                 </div>
@@ -158,7 +158,7 @@ export default function AddVideoGame() {
                     />
                     {
                         errors.rating && (
-                            <div > {errors.rating} </div>
+                            <div className={Styles.danger}> {errors.rating} </div>
                         )
                     }
                 </div>
@@ -174,7 +174,7 @@ export default function AddVideoGame() {
                     />
                     {
                         errors.released && (
-                            <div > {errors.released} </div>
+                            <div className={Styles.danger}> {errors.released} </div>
                         )
                     }
                 </div>
@@ -201,7 +201,7 @@ export default function AddVideoGame() {
                     />
                     {
                         errors.description && (
-                            <p > {errors.description} </p>
+                            <p className={Styles.danger}> {errors.description} </p>
                         )
                     }
                 </div>
@@ -218,7 +218,7 @@ export default function AddVideoGame() {
                     <ul><li className={Styles.li}>{input.platforms?.map(el=>el +'/')}</li></ul> 
                     {
                         errors.platforms && (
-                            <p  > {errors.platforms} </p>
+                            <p className={Styles.danger} > {errors.platforms} </p>
                         )
                     }
                 </div >
@@ -236,13 +236,13 @@ export default function AddVideoGame() {
                      
                     {
                         errors.genres && (
-                            <p > {errors.genres} </p>
+                            <p className={Styles.danger}> {errors.genres} </p>
                         )
                     }
                 </div>
                 {
                     errors && (errors.name || errors.rating || errors.description || errors.genres || errors.platforms) ?
-                        <p >Complete Form</p>
+                        <p className={Styles.danger} >Complete Form</p>
                         :
                         <button
                             type="submit"

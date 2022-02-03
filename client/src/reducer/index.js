@@ -42,7 +42,11 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 details:action.payload
             }
-
+        case "DELETE":
+            return{
+                ...state,
+                details:{}
+            }
         case 'FILTER_BY_GENRE':
 
             const genreFilter = action.payload === "Todos" ? state.allVideogames :

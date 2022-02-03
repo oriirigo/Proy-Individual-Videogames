@@ -15,9 +15,7 @@ export default function HomePage() {
   const dispatch = useDispatch();
   const allVideoGames = useSelector((state) => state.videogames);
 
-  useEffect(() => {
-    dispatch(getVideoGames());
-  }, [dispatch]);
+
 
   const [currentePage, setCurrentePage] = useState(1);
   const [videogamesperPage] = useState(15);
@@ -28,6 +26,24 @@ export default function HomePage() {
   const actualPage = (numpag) => {
     setCurrentePage(numpag);
   };
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    dispatch(getVideoGames())
+    .then(response => {
+      setLoading(false)
+    })
+  }, [dispatch]);
+
+
+  if (loading) {
+    return (
+      <div className={Styles.loading}>
+        <h1>{}</h1> 
+      </div>
+    )
+  }
 
   function handleShowAll(e) {
     e.preventDefault();

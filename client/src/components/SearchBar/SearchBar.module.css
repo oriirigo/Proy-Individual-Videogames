@@ -31,3 +31,17 @@
 .input::placeholder{
     font-size: 18px;
 }
+
+.error{
+    font-family:monospace;
+    letter-spacing:0.5px;
+    color: red;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.divErrors{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

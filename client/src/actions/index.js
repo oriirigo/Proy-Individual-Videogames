@@ -70,6 +70,14 @@ return async function(dispatch){
 }
 }
 
+export function deleteDetalle(){
+  return async function(dispatch){
+    return dispatch({
+      type:"DELETE",
+    })
+  }
+}
+
 export function postVideogame(payload){
   return async function(dispatch){
       const post=  await  axios.post('http://localhost:3001/videogame',payload)
